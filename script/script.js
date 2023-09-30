@@ -13,7 +13,10 @@ const renderData = (data) => {
 };
 
 const getCity = () => {
+    const city = $("#select-city").value;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     console.log($("#select-city").value);
+    getData(url);
 };
 
 window.onload = getGeolocation();

@@ -12,4 +12,10 @@ const renderData = (data) => {
     $("#wind").innerText = `${wind.speed}`;
 };
 
-window.onload = getData();
+const getCity = () => {
+    console.log($("#select-city").value);
+};
+
+window.onload = getGeolocation();
+
+$("#select-city").addEventListener("change", () => getCity());

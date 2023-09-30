@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climateando</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/c89c9de4f7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/api-clima/style/style.css">
+</head>
+<body class="has-background-light">
+
+    <main>
+        <div class="container">
+            <div class="m-4 has-text-centered">
+              <h2 class="title is-3">Estado del tiempo en
+                <span id="place"></span>
+              </h2>
+
+            </div>
+            <div class="m-4 has-text-centered">
+                <h3 class="title is-4">Temperatura actual
+                    <p id="current-temp"></p>
+                </h3>
+              </div>
+            <div class="columns is-multiline m-4 has-text-centered">
+                <div class="column is-half">
+                  <span id="min-temp"></span>
+                    <i class="fa-solid fa-temperature-arrow-down"></i>
+                    
+                  </div>
+                  <div class="column is-half">
+                    <span id="max-temp"></span>
+                    <i class="fa-solid fa-temperature-arrow-up"></i>
+                    
+                  </div>
+                  <div class="column is-half">
+                    <span id="wind"></span>
+                    <i class="fa-solid fa-wind"></i>
+                    
+                  </div>
+                  <div class="column is-half">
+                    <span id="humidity"></span>
+                    <i class="fa-solid fa-droplet"></i>
+                    
+                  </div>
+            </div>
+          </div>
+    </main>
+
+    <script src="/api-clima/script/api.js"></script>
+    <script src="/api-clima/script/script.js"></script>
+</body>
+</html>

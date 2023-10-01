@@ -14,7 +14,8 @@ const getGeolocation = () => {
             let lat = position.coords.latitude;
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
             getData(url);
-            console.log(url);
         });
+    } else {
+        alert("El navegador no dispone la capacidad de geolocalización");
     }
 };

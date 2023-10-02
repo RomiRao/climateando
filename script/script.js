@@ -12,11 +12,31 @@ const renderData = (data) => {
     $("#wind").innerText = `${wind.speed} km`;
 };
 
+const getGeolocation = () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            let params = {
+                lon: position.coords.longitude,
+                lat: position.coords.latitude,
+                units: "metric",
+            };
+            getData(new URLSearchParams(params).toString());
+        });
+    } else {
+        alert("Ubicacion no proporcionada");
+    }
+};
+
 const getCity = () => {
-    const city = $("#select-city").value;
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-    console.log(url);
-    getData(url);
+    if ($("#select-city").value !== "ubi") {
+        let params = {
+            q: $("#select-city").value,
+            units: "metric",
+        };
+        getData(new URLSearchParams(params).toString());
+    } else if ($("#select-city").value === "ubi") {
+        getGeolocation();
+    }
 };
 
 window.onload = getGeolocation();
